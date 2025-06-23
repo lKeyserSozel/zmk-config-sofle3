@@ -17,29 +17,6 @@
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
-    macros {
-        Language: Language {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp SPACE>;
-            label = "LANGUAGE";
-        };
-
-        raycast: raycast {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp SPACE>;
-            label = "RAYCAST";
-        };
-
-        language: language {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(SPACE)>;
-            label = "LANGUAGE";
-        };
-    };
-
     behaviors {
         spacefn: spacefn {
             compatible = "zmk,behavior-hold-tap";
@@ -48,13 +25,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-        };
-
-        toggleLayer01: toggleLayer01 {
-            compatible = "zmk,behavior-toggle-layer";
-            label = "TOGGLELAYER01";
-            #binding-cells = <1>;
-            toggle-mode = "flip";
         };
     };
 
@@ -72,11 +42,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4         &kp N5                                         &kp N6            &kp N7   &kp N8            &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W     &kp E      &kp R          &kp T                                          &kp Y             &kp U    &kp I             &kp O    &kp P     &kp LEFT_BRACKET
-&kp LWIN   &kp A   &kp S     &kp D      &kp F          &kp G                                          &kp H             &kp J    &kp K             &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C      &kp V          &kp B             &kp C_MUTE    &none          &kp N             &kp M    &kp COMMA         &kp DOT  &kp FSLH  &kp EQUAL
-                   &kp LALT  &kp LCTRL  &kp LG(SPACE)  &spacefn 2 SPACE  &kp ENTER     &kp BACKSPACE  &spacefn 3 SPACE  &kp DEL  &toggleLayer01 1  &none
+&kp ESC    &kp N1  &kp N2    &kp N3     &kp N4         &kp N5                                         &kp N6            &kp N7   &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W     &kp E      &kp R          &kp T                                          &kp Y             &kp U    &kp I      &kp O    &kp P     &kp LEFT_BRACKET
+&kp LWIN   &kp A   &kp S     &kp D      &kp F          &kp G                                          &kp H             &kp J    &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X     &kp C      &kp V          &kp B             &kp C_MUTE    &none          &kp N             &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
+                   &kp LALT  &kp LCTRL  &kp LG(SPACE)  &spacefn 2 SPACE  &kp ENTER     &kp BACKSPACE  &spacefn 3 SPACE  &kp DEL  &none      &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -85,11 +55,11 @@
         layer_1 {
             display-name = "layer_1";
             bindings = <
-&kp ESC           &kp N1  &kp N2    &kp N3    &kp N4         &kp N5                                  &kp N6            &kp N7   &kp N8            &kp N9   &kp N0    &kp MINUS
-&kp TAB           &kp Q   &kp W     &kp E     &kp R          &kp T                                   &kp Y             &kp U    &kp I             &kp O    &kp P     &kp LEFT_BRACKET
-&kp LEFT_CONTROL  &kp A   &kp S     &kp D     &kp F          &kp G                                   &kp H             &kp J    &kp K             &kp L    &kp SEMI  &kp SQT
-&kp LSHFT         &kp Z   &kp X     &kp C     &kp V          &kp B      &kp C_MUTE    &none          &kp N             &kp M    &kp COMMA         &kp DOT  &kp FSLH  &kp EQUAL
-                          &kp LALT  &kp LWIN  &kp LG(SPACE)  &kp SPACE  &kp ENTER     &kp BACKSPACE  &spacefn 2 SPACE  &kp DEL  &toggleLayer01 1  &none
+&kp ESC           &kp N1  &kp N2    &kp N3    &kp N4         &kp N5                                  &kp N6            &kp N7   &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB           &kp Q   &kp W     &kp E     &kp R          &kp T                                   &kp Y             &kp U    &kp I      &kp O    &kp P     &kp LEFT_BRACKET
+&kp LEFT_CONTROL  &kp A   &kp S     &kp D     &kp F          &kp G                                   &kp H             &kp J    &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT         &kp Z   &kp X     &kp C     &kp V          &kp B      &kp C_MUTE    &none          &kp N             &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
+                          &kp LALT  &kp LWIN  &kp LG(SPACE)  &kp SPACE  &kp ENTER     &kp BACKSPACE  &spacefn 2 SPACE  &kp DEL  &none      &none
             >;
 
             sensor-bindings =
